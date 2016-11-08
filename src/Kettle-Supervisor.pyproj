@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>026044a6-a85e-4e91-9b14-1e3531cb1e07</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>interactive.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>Kettle-Supervisor</Name>
+    <RootNamespace>Kettle-Supervisor</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterId>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</InterpreterId>
+    <InterpreterVersion>2.7</InterpreterVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
+    <Folder Include="data\raw\" />
+    <Folder Include="features\" />
+    <Folder Include="interactive\" />
+    <Folder Include="interactive\audio\" />
+    <Folder Include="models\" />
+    <Folder Include="models\svm\" />
+    <Folder Include="visualization\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="interactive\audio\normalization.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="data\__init__.py" />
+    <Compile Include="features\build_features.py" />
+    <Compile Include="interactive\audio\model.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="interactive\audio\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="interactive.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="interactive\audio\recorder.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="interactive\audio\io.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="interactive\__init__.py" />
+    <Compile Include="models\svm\predict_model.py" />
+    <Compile Include="models\svm\train_model.py" />
+    <Compile Include="visualization\visualize.py" />
+    <Compile Include="__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\2.7" />
+  </ItemGroup>
+  <Import Condition="Exists($(PtvsTargetsFile))" Project="$(PtvsTargetsFile)" />
+  <Import Condition="!Exists($(PtvsTargetsFile))" Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

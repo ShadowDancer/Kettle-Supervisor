@@ -74,3 +74,4 @@ target/
 
 # visual studio user data
 .vs/
+*.user
