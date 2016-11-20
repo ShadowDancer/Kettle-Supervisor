@@ -8,6 +8,8 @@ def save_recording(path, recording):
     """Records from the microphone and outputs the resulting data to 'path'"""
     packed_data = pack('<' + ('h'*len(recording.sound_data)), *recording.sound_data)
     wf = wave.open(path, 'wb')
+
+
     wf.setnchannels(1)
     wf.setsampwidth(recording.sample_width)
     wf.setframerate(recording.bitrate)

@@ -36,7 +36,6 @@
     <Folder Include="interactive\audio\" />
     <Folder Include="models\" />
     <Folder Include="models\svm\" />
-    <Folder Include="visualization\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="interactive\audio\normalization.py">
@@ -62,7 +61,6 @@
     <Compile Include="interactive\__init__.py" />
     <Compile Include="models\svm\predict_model.py" />
     <Compile Include="models\svm\train_model.py" />
-    <Compile Include="visualization\visualize.py" />
     <Compile Include="__init__.py" />
   </ItemGroup>
   <ItemGroup>

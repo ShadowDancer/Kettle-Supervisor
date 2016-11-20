@@ -17,7 +17,11 @@ if __name__ == '__main__':
     if not file_name.lower().endswith(".wav"):
         file_name += ".wav";    
 
-    path = os.path.join("data", "raw", file_name)
+    directory = os.path.join("data", "raw")
+    path = os.path.join("..", "data", "raw", file_name)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
     print_m("Saving to " + path)
     save_recording(path, recording)
     print_m("Good night")

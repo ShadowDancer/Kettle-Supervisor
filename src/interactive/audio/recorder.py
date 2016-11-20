@@ -8,7 +8,7 @@ from normalization import normalize_volume
 class AudioRecorder:
     """Rocords audio data; returns recorded data as wave objects"""
 
-    threshold = 500
+    threshold = 75
     """
     sound threshold treated as silence, 
     recording start and end with should that is trimmed afterwards
