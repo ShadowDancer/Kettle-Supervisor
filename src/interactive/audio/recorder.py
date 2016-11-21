@@ -6,7 +6,7 @@ from model import Recording
 from normalization import normalize_volume
 
 class AudioRecorder:
-    """Rocords audio data; returns recorded data as wave objects"""
+    """Records audio data; returns recorded data as wave objects"""
 
     threshold = 75
     """
