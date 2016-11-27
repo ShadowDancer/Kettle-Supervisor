@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>026044a6-a85e-4e91-9b14-1e3531cb1e07</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>loader.py</StartupFile>
+    <StartupFile>modeltester.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -67,6 +67,7 @@
     <Compile Include="data\paths.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="modeltester.py" />
     <Compile Include="preprocessor.py" />
     <Compile Include="__init__.py" />
   </ItemGroup>
