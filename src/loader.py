@@ -1,22 +1,25 @@
 ﻿""""Loader class that coordinates loading of data samples and converting them to XY array"""
 
-import os, fnmatch
+import os
+import fnmatch
 import numpy as np
 from preprocessor import DataPreprocessor
 from data.paths import Paths
 from data.features import Features
 
-
 class Loader:
-    def load_data(self):
+    def load_datasets(self):
+        """returns datasets"""
         warming_file_names = fnmatch.filter(os.listdir(Paths.raw_data), '*A.wav')
         boiling_file_names = fnmatch.filter(os.listdir(Paths.raw_data), '*B.wav')
-
-        pp = DataPreprocessor()
-
+        
         warming_data = self.load_samples(warming_file_names)
         boiling_data = self.load_samples(boiling_file_names)
+        return warming_data, boiling_data
 
+    def load_data(self):
+        """loads all data to X, Y vector"""
+        warming_data, boiling_data = load_datasets()
         data = []
         data.extend(warming_data)
         data.extend(boiling_data)
@@ -25,7 +28,8 @@ class Loader:
         for index in range(len(warming_data),len(warming_data) + len(boiling_data)):
             target[index] = 1 # set one for feature of class 2 (boiling water)
 
-        X = np.array(data)
+        from sklearn import preprocessing
+        X = preprocessing.scale(np.array(data))
         Y = target
         return X, Y
 
@@ -37,10 +41,22 @@ class Loader:
         return samples
 
 if __name__ == '__main__':
-    l = Loader();
-    X, Y = l.load_data();   
-    print "Loader selftest..."
-    print "X: "
-    print X
-    print "Y: " + str(Y)  
-    print "Done!"
+    
+    l = Loader()
+    W, B = l.load_datasets()   
+    
+    y = range(len(W))
+
+    import matplotlib.pyplot as plt
+    plt.plot(y, W);
+    plt.xlabel('Seconds') 
+    plt.ylabel('Amplitude')
+    plt.show()
+
+    #l = Loader()
+    #X, Y = l.load_data()   
+    #print "Loader selftest..."
+    #print "X: "
+    #print X
+    #print "Y: " + str(Y)  
+    #print "Done!"

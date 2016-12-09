@@ -24,6 +24,7 @@ if __name__ == '__main__':
         print()
         clf = GridSearchCV(estimator=svc, param_grid=param_grid, cv=cv, n_jobs=-1, scoring='%s_macro' % score, verbose=1)
         clf.fit(X, Y)
+
         print("Best parameters set found on development set:")
         print()
         print(clf.best_params_)

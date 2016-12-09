@@ -19,7 +19,7 @@ if __name__ == '__main__':
     X, Y = l.load_data();   
 
     print str(datetime.now()) + " testing"
-    scores = test_model(svm.SVC(C=1), X, Y)
+    scores = test_model(svm.SVC(C=1, kernel='linear'), X, Y)
     print str(datetime.now()) + " done"
     print print_score(scores)
 

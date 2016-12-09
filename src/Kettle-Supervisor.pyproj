@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>026044a6-a85e-4e91-9b14-1e3531cb1e07</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>svmevaluation.py</StartupFile>
+    <StartupFile>loader.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
